@@ -1,0 +1,441 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Some Dreams Need Wi-Fi — an independent advertising concept about family, learning, and human connection.">
+  <title>Some Dreams Need Wi-Fi | WALK WITH ME</title>
+
+  <style>
+    :root {
+      --bg: #101114;
+      --panel: #191a20;
+      --yellow: #f4d44d;
+      --white: #f5f5f2;
+      --muted: #b4b4bc;
+      --line: #34343c;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      background: var(--bg);
+      color: var(--white);
+      font-family: Arial, Helvetica, sans-serif;
+      line-height: 1.7;
+    }
+
+    a {
+      color: inherit;
+    }
+
+    .container {
+      width: min(100% - 40px, 1000px);
+      margin: auto;
+    }
+
+    header {
+      padding: 24px 0;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 16px;
+    }
+
+    .logo {
+      color: var(--yellow);
+      font-weight: 900;
+      letter-spacing: 2px;
+      text-decoration: none;
+    }
+
+    .back {
+      color: var(--muted);
+      text-decoration: none;
+      font-size: 14px;
+    }
+
+    .back:hover {
+      color: var(--yellow);
+    }
+
+    .hero {
+      padding: 95px 0 75px;
+      background:
+        radial-gradient(ellipse at 80% 20%, #39321b 0%, transparent 48%),
+        var(--bg);
+    }
+
+    .eyebrow {
+      color: var(--yellow);
+      font-size: 12px;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      font-weight: bold;
+    }
+
+    h1 {
+      max-width: 850px;
+      margin: 18px 0;
+      font-size: clamp(42px, 8vw, 82px);
+      line-height: 1.04;
+      letter-spacing: -3px;
+    }
+
+    h1 span {
+      color: var(--yellow);
+    }
+
+    .intro {
+      max-width: 650px;
+      color: var(--muted);
+      font-size: 18px;
+    }
+
+    .tagline {
+      display: inline-block;
+      margin-top: 20px;
+      padding: 10px 16px;
+      border: 1px solid var(--yellow);
+      border-radius: 4px;
+      color: var(--yellow);
+      font-weight: bold;
+    }
+
+    section {
+      padding: 55px 0;
+    }
+
+    .section-label {
+      color: var(--yellow);
+      font-size: 12px;
+      font-weight: bold;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+    }
+
+    h2 {
+      margin: 8px 0 18px;
+      font-size: clamp(28px, 5vw, 42px);
+      line-height: 1.2;
+    }
+
+    h3 {
+      margin-top: 0;
+      font-size: 23px;
+    }
+
+    .muted {
+      color: var(--muted);
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 18px;
+      margin-top: 28px;
+    }
+
+    .card {
+      padding: 25px;
+      background: var(--panel);
+      border: 1px solid var(--line);
+      border-radius: 10px;
+    }
+
+    .card p:last-child {
+      margin-bottom: 0;
+    }
+
+    .story {
+      border-top: 1px solid var(--line);
+    }
+
+    .scene {
+      display: grid;
+      grid-template-columns: 85px minmax(0, 1fr);
+      gap: 20px;
+      padding: 30px 0;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .scene-number {
+      color: var(--yellow);
+      font-size: 30px;
+      font-weight: 900;
+    }
+
+    .scene h3 {
+      margin-bottom: 8px;
+    }
+
+    .scene p {
+      margin: 8px 0;
+    }
+
+    .visual-label {
+      color: var(--yellow);
+      font-size: 12px;
+      font-weight: bold;
+      letter-spacing: 1px;
+    }
+
+    .ending {
+      margin-top: 25px;
+      padding: 35px 25px;
+      background: var(--yellow);
+      color: #171717;
+      border-radius: 10px;
+      text-align: center;
+    }
+
+    .ending p {
+      margin: 0 0 8px;
+      font-size: 12px;
+      font-weight: bold;
+      letter-spacing: 2px;
+    }
+
+    .ending h2 {
+      margin: 0;
+      font-size: clamp(25px, 5vw, 42px);
+    }
+
+    .note {
+      margin-top: 28px;
+      padding: 18px;
+      border-left: 3px solid var(--yellow);
+      background: var(--panel);
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    footer {
+      padding: 28px 0;
+      border-top: 1px solid var(--line);
+      color: var(--muted);
+      font-size: 13px;
+    }
+
+    footer .container {
+      display: flex;
+      justify-content: space-between;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+
+    @media (max-width: 650px) {
+      .hero {
+        padding: 65px 0 50px;
+      }
+
+      h1 {
+        letter-spacing: -1.5px;
+      }
+
+      .grid {
+        grid-template-columns: 1fr;
+      }
+
+      .scene {
+        grid-template-columns: 48px minmax(0, 1fr);
+        gap: 12px;
+      }
+
+      .scene-number {
+        font-size: 23px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+    <div class="container nav">
+      <a class="logo" href="index.html">WALK WITH ME.</a>
+      <a class="back" href="index.html">← Back to portfolio</a>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="container">
+        <p class="eyebrow">Independent advertising concept · 01</p>
+
+        <h1>Some Dreams<br>Need <span>Wi-Fi.</span></h1>
+
+        <p class="intro">
+          One grandmother wants to see her daughter.
+          One young student wants to build his future.
+          One unreliable connection stands in their way.
+        </p>
+
+        <div class="tagline">
+          More than a connection. A human need.
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="container">
+        <p class="section-label">01 / The big idea</p>
+        <h2>One connection. Two generations.</h2>
+
+        <p class="muted">
+          The internet is more than a screen or a signal.
+          It helps families stay close, students keep learning,
+          and people work towards the future they imagine.
+        </p>
+
+        <div class="grid">
+          <article class="card">
+            <h3>The human insight</h3>
+            <p class="muted">
+              Different generations use the internet for different
+              reasons, but both need a reliable connection to what
+              matters to them.
+            </p>
+          </article>
+
+          <article class="card">
+            <h3>The target audience</h3>
+            <p class="muted">
+              Families, students, and people who depend on internet
+              access for communication, education, and creativity.
+            </p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="story">
+      <div class="container">
+        <p class="section-label">02 / The advertisement</p>
+        <h2>The story, scene by scene</h2>
+
+        <p class="muted">
+          A first-draft story outline. Dialogue and production
+          details can be developed in the next stage.
+        </p>
+
+        <article class="scene">
+          <div class="scene-number">01</div>
+          <div>
+            <p class="visual-label">THE PROBLEM</p>
+            <h3>Two lives, one weak connection</h3>
+            <p>
+              A grandmother video-calls her daughter, but the call
+              keeps freezing. In the same house, her grandson is
+              learning to create a virtual world on his laptop.
+              His online lesson stops because of the weak connection.
+            </p>
+            <p class="muted">
+              The grandmother wants to stay close to her daughter.
+              The boy wants to learn and build his future.
+            </p>
+          </div>
+        </article>
+
+        <article class="scene">
+          <div class="scene-number">02</div>
+          <div>
+            <p class="visual-label">THE REALISATION</p>
+            <h3>The father notices</h3>
+            <p>
+              Their father sees how the network problem is affecting
+              both his mother's conversations and his son's learning.
+              He realises that the family needs a more reliable service.
+            </p>
+          </div>
+        </article>
+
+        <article class="scene">
+          <div class="scene-number">03</div>
+          <div>
+            <p class="visual-label">THE SOLUTION</p>
+            <h3>A better way to connect</h3>
+            <p>
+              The father compares available internet services and
+              decides to switch to one that better suits the family's
+              needs. The family gets connected again.
+            </p>
+          </div>
+        </article>
+
+        <article class="scene">
+          <div class="scene-number">04</div>
+          <div>
+            <p class="visual-label">THE EMOTIONAL PAYOFF</p>
+            <h3>Closer, even from far away</h3>
+            <p>
+              The grandmother, father, and grandson sit together,
+              talking and laughing while the grandmother's daughter
+              joins them through a clear video call. The boy can
+              return to learning and creating his virtual world.
+            </p>
+            <p class="muted">
+              The family enjoys the simple happiness of being connected.
+            </p>
+          </div>
+        </article>
+
+        <div class="ending">
+          <p>THE CAMPAIGN MESSAGE</p>
+          <h2>Wi-Fi. More Than a Connection. A Human Need.</h2>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="container">
+        <p class="section-label">03 / Creative direction</p>
+        <h2>What this concept stands for</h2>
+
+        <div class="grid">
+          <article class="card">
+            <h3>Emotion</h3>
+            <p class="muted">
+              The joy of seeing someone you love, even when they
+              are far away.
+            </p>
+          </article>
+
+          <article class="card">
+            <h3>Ambition</h3>
+            <p class="muted">
+              The opportunity to learn, practise, and create
+              something for the future.
+            </p>
+          </article>
+        </div>
+
+        <div class="note">
+          <strong>Portfolio note:</strong> This is an original,
+          independent practice concept. It is not an official
+          internet-provider campaign or commissioned client work.
+          No specific provider or performance claim is being endorsed.
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container">
+      <span>© WALK WITH ME.</span>
+      <a href="index.html">Back to all projects ↑</a>
+    </div>
+  </footer>
+</body>
+</html>
